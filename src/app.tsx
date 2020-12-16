@@ -1,16 +1,42 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import React, { useState, useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Loading from 'Components/loading/Loading'
 
-interface Test {
-    a: number,
-    b: string,
+// interface Loading {
+//     isLoading: boolean
+// }
+
+const App = () => {
+    const [ isLoading, setIsloading ] = useState<boolean>(true)
+    useEffect(() => {
+        setTimeout(() => {
+            setIsloading(false);
+        }, 1000)
+    }, [])
+    return (
+        <BrowserRouter>
+            <div className="App">
+                {!isLoading 
+                ? (
+                    <>
+                        <div>
+
+                            testtest
+                        </div>
+                        {/* <Switch>
+                            <Route path="" component={} />
+
+                        </Switch> */}
+                    </>
+                ) 
+                : (
+                    // <div />
+                    <Loading />
+                )}
+            </div>
+        </BrowserRouter>
+    )
 }
-
-const App = () => (
-    <div>
-        <h1>Hello</h1>
-        <p>test</p> 
-    </div>
-)
 
 ReactDOM.render(<App />, document.getElementById('root'))

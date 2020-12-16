@@ -15,6 +15,15 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public')
+  },
+  resolve: {
+    extensions: ['tsx', '.ts', '.js'],
+    alias: {
+      Components: path.resolve(__dirname, "src/components/"),
+      // 'Components': path.resolve(__dirname, '../src/components/'),
+      // 'Pages': path.resolve(__dirname, '../src/pages/'),
+      // 'Services': path.resolve(__dirname, '../src/services/'),
+    },
   }
 }
 

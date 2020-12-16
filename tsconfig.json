@@ -5,10 +5,15 @@
     "jsx"                              : "react"    ,
     "outDir"                           : "./public"    ,
     "rootDir"                          : "./src"    ,
+    "baseUrl"                          : "./" ,
+    "paths": {
+      "Components/*"                               : [ "src/components/*" ],
+    },
     /* Default flags */
     "strict"                           : true       ,
     "esModuleInterop"                  : true       ,
     "skipLibCheck"                     : true       ,
     "forceConsistentCasingInFileNames" : true
-  }
+  },
+  "include": ["src"]
 }

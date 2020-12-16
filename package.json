@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve",
+    "start": "webpack serve --port 3000",
     "watch": "webpack --watch"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.1.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
