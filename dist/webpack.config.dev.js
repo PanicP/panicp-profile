@@ -1,4 +1,6 @@
-const path = require('path');
+"use strict";
+
+var path = require('path');
 
 module.exports = {
   entry: './src/app.tsx',
@@ -7,17 +9,14 @@ module.exports = {
     path: path.join(__dirname, 'public')
   },
   module: {
-    rules: [
-      {
-        loader: 'babel-loader',
-        test: /\.js$|jsx|ts|tsx/,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-    ]
+    rules: [{
+      loader: 'babel-loader',
+      test: /\.js$|jsx|ts|tsx/,
+      exclude: /node_modules/
+    }, {
+      test: /\.(scss|css)$/,
+      use: ['style-loader', 'css-loader', 'sass-loader']
+    }]
   },
   devServer: {
     contentBase: path.join(__dirname, 'public')
@@ -25,13 +24,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      Components: path.resolve(__dirname, "src/components/"),
-      // 'Components': path.resolve(__dirname, '../src/components/'),
+      Components: path.resolve(__dirname, "src/components/") // 'Components': path.resolve(__dirname, '../src/components/'),
       // 'Pages': path.resolve(__dirname, '../src/pages/'),
       // 'Services': path.resolve(__dirname, '../src/services/'),
-    },
-  }
-  // resolve: {
+
+    }
+  } // resolve: {
   //   extensions: ['tsx', '.ts', '.js'],
   //   alias: {
   //     Components: path.resolve(__dirname, "src/components/"),
@@ -40,10 +38,8 @@ module.exports = {
   //     // 'Services': path.resolve(__dirname, '../src/services/'),
   //   },
   // }
-}
 
-// const path = require('path');
-
+}; // const path = require('path');
 // module.exports = {
 //   entry  : './out/App.js',
 //   output : {

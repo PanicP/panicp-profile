@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Loading from 'Components/loading/Loading'
+
+import './App.scss'
 // import Loading from './components/loading/Loading'
 
 // interface Loading {
@@ -13,7 +15,7 @@ const App = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsloading(false);
-        }, 1000)
+        }, 2000)
     }, [])
     return (
         <BrowserRouter>
