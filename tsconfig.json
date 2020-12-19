@@ -1,19 +1,23 @@
 {
   "compilerOptions": {
-    "target"                           : "es6"      ,
-    "module"                           : "commonjs" ,
-    "jsx"                              : "react"    ,
-    "outDir"                           : "./public"    ,
-    "rootDir"                          : "./src"    ,
-    "baseUrl"                          : "./" ,
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "outDir": "./public",
+    "rootDir": "./src",
+    "baseUrl": "./",
     "paths": {
-      "Components/*"                               : [ "src/components/*" ],
+      "Components/*": [
+        "src/components/*"
+      ],
     },
     /* Default flags */
-    "strict"                           : true       ,
-    "esModuleInterop"                  : true       ,
-    "skipLibCheck"                     : true       ,
-    "forceConsistentCasingInFileNames" : true
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

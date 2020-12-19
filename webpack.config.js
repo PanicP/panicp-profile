@@ -17,7 +17,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'public')
   },
   resolve: {
-    extensions: ['tsx', '.ts', '.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       Components: path.resolve(__dirname, "src/components/"),
       // 'Components': path.resolve(__dirname, '../src/components/'),
@@ -25,6 +25,15 @@ module.exports = {
       // 'Services': path.resolve(__dirname, '../src/services/'),
     },
   }
+  // resolve: {
+  //   extensions: ['tsx', '.ts', '.js'],
+  //   alias: {
+  //     Components: path.resolve(__dirname, "src/components/"),
+  //     // 'Components': path.resolve(__dirname, '../src/components/'),
+  //     // 'Pages': path.resolve(__dirname, '../src/pages/'),
+  //     // 'Services': path.resolve(__dirname, '../src/services/'),
+  //   },
+  // }
 }
 
 // const path = require('path');
