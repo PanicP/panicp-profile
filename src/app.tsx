@@ -1,44 +1,50 @@
+
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Loading from 'Components/loading/Loading'
+import { Router, Switch, Route } from 'react-router-dom'
+
+import Chat from 'Components/pages/Chat'
+import Hobby from 'Components/pages/Hobby'
+import Loading from 'Components/pages/Loading'
+import { history } from './history'
 
 import './App.scss'
-// import Loading from './components/loading/Loading'
 
 // interface Loading {
 //     isLoading: boolean
 // }
 
 const App = () => {
-    const [ isLoading, setIsloading ] = useState<boolean>(true)
+    const [isLoading, setIsloading] = useState<boolean>(true)
+    // const history = useHistory()
+
     useEffect(() => {
         setTimeout(() => {
             setIsloading(false);
         }, 2000)
     }, [])
+
     return (
-        <BrowserRouter>
-            <div className="App">
-                {!isLoading 
+        <Router history={history}>
+            {!isLoading
                 ? (
                     <>
-                        <div>
-
-                            testtest
-                        </div>
-                        {/* <Switch>
-                            <Route path="" component={} />
-
-                        </Switch> */}
+                        <Switch>
+                            <Route path="/chat" component={Chat} />
+                            <Route path="/hobby" component={Hobby} />
+                            <Route path="/" component={() =>
+                                <div>
+                                    <button onClick={() => history.push('/chat')}>go to chat</button>
+                                    <button onClick={() => history.push('/hobby')}>go to hobby</button>
+                                </div>} />
+                        </Switch>
                     </>
-                ) 
+                )
                 : (
                     // <div />
                     <Loading />
                 )}
-            </div>
-        </BrowserRouter>
+        </Router>
     )
 }
 
