@@ -33,11 +33,11 @@
 }
 
 .line-scale-pulse-out > div {
-    background-color: red;
-    width: 4px;
-    height: 35px;
-    border-radius: 2px;
-    margin: 2px;
+    background-color: #ed6363;
+    width: 40px;
+    height: 350px;
+    border-radius: 20px;
+    margin: 20px;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     display: inline-block;
@@ -57,8 +57,10 @@
     animation-delay: -0.2s !important;
 }
 
-.test {
-    background-color: orange;
-    width: 500;
-    height: 300;
+.loading-container {
+    background-color: #003545;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
