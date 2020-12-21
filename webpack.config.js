@@ -26,32 +26,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       Components: path.resolve(__dirname, "src/components/"),
-      // 'Components': path.resolve(__dirname, '../src/components/'),
-      // 'Pages': path.resolve(__dirname, '../src/pages/'),
-      // 'Services': path.resolve(__dirname, '../src/services/'),
     },
+  },
+  performance: {
+    hints: false
   }
-  // resolve: {
-  //   extensions: ['tsx', '.ts', '.js'],
-  //   alias: {
-  //     Components: path.resolve(__dirname, "src/components/"),
-  //     // 'Components': path.resolve(__dirname, '../src/components/'),
-  //     // 'Pages': path.resolve(__dirname, '../src/pages/'),
-  //     // 'Services': path.resolve(__dirname, '../src/services/'),
-  //   },
-  // }
 }
-
-// const path = require('path');
-
-// module.exports = {
-//   entry  : './out/App.js',
-//   output : {
-//     path     : path.resolve(__dirname, 'public'),
-//     filename : 'app.js'
-//   },
-//   externals : {
-//     "react"     : 'React',
-//     "react-dom" : 'ReactDOM'
-//   },
-// };
