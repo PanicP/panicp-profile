@@ -1,0 +1,10 @@
+.bubble-container {
+  background-color: red;
+  border-radius: 10%;
+  height: 1em;
+  padding: 10px;
+
+  > .bubble-label {
+    color: blue;
+  }
+}
