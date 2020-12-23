@@ -1,0 +1,11 @@
+.chat-layout {
+  display: flex;
+
+  > .empty-space {
+    flex: 3;
+  }
+
+  > .chat-container {
+    flex: 4;
+  }
+}
