@@ -1,15 +1,15 @@
 import React from 'react'
 import './Bubble.scss'
 
-interface ChatBubble {
+interface IChatBubble {
   label: string
 }
 
-const ChatBubble = ( label ) => (
+const ChatBubble = ({ label }: IChatBubble) => (
   <div>
     <div className='bubble-container'>
       <div className='bubble-label'>
-        {/* { label } */}
+        { label }
       </div>
     </div>
   </div>

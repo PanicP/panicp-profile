@@ -1,10 +1,16 @@
+$color1: #B8D8BA;
+$color2: #D9DBBC;
+$color3: #FCDDBC;
+$color4: #EF959D;
+$color5: #69585F;
+
 .bubble-container {
-  background-color: red;
-  border-radius: 10%;
-  height: 1em;
+  background-color: $color4;
+  border-radius: 2em;
   padding: 10px;
 
   > .bubble-label {
-    color: white;
+    color: $color3;
+    height: 1em;
   }
 }
