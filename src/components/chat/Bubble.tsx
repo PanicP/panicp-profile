@@ -9,7 +9,7 @@ const ChatBubble = ( label ) => (
   <div>
     <div className='bubble-container'>
       <div className='bubble-label'>
-
+        {/* { label } */}
       </div>
     </div>
   </div>
