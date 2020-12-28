@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Switch, Route } from 'react-router-dom'
 
-import Chat from 'Components/pages/Chat'
-import Hobby from 'Components/pages/Hobby'
-import Loading from 'Components/pages/Loading'
+import ChatPage from 'Components/pages/ChatPage'
+import HobbyPage from 'Components/pages/HobbyPage'
+import LoadingPage from 'Components/pages/LoadingPage'
 import { history } from './history'
 
 import './App.scss'
@@ -30,8 +30,8 @@ const App = () => {
                 ? (
                     <>
                         <Switch>
-                            <Route path="/chat" component={Chat} />
-                            <Route path="/hobby" component={Hobby} />
+                            <Route path="/chat" component={ChatPage} />
+                            <Route path="/hobby" component={HobbyPage} />
                             <Route path="/" component={() =>
                                 <div>
                                     <button onClick={() => history.push('/chat')}>go to chat</button>
@@ -42,7 +42,7 @@ const App = () => {
                 )
                 : (
                     // <div />
-                    <Loading />
+                    <LoadingPage />
                 )}
         </Router>
     )
