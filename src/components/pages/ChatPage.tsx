@@ -8,7 +8,8 @@ export default () => {
         1: 'Welcome to my simple portfolio.',
         2: 'Do you want to know something about me ?',
         3: 'So, I have some side projects and my hobbies.',
-        4: 'Which one do you want to see ?'
+        4: 'Which one do you want to see ?',
+        5: 'See ya.'
     }
 
     const yourSentence = {
@@ -19,12 +20,39 @@ export default () => {
     }
 
     // mines
-    const greeting = [ mySentence[1], mySentence[2] ]
-    const askingEtc = [ mySentence[3], mySentence[4] ]
+    const greeting = [
+        { label: mySentence[1] }, 
+        { label: mySentence[2] }
+    ]
+    const goodbye = [
+        { label: mySentence[5] }, 
+    ]
+    const askingEtc = [
+        { label: mySentence[3] }, 
+        { label: mySentence[4] }
+    ]
 
     // yours
-    const ansGreeting = [ yourSentence[1], yourSentence[2] ]
-    const ansAskingEtc = [ mySentence[3], mySentence[4] ]
+    const ansGreeting = [
+        { 
+            label: yourSentence[1],
+            goTo: 'askingEtc'
+        }, 
+        { 
+            label: yourSentence[2] ,
+            goTo: 'goodbye'
+        }
+    ]
+    const ansAskingEtc = [
+        { 
+            label: yourSentence[3],
+            // goTo: ''
+        }, 
+        { 
+            label: yourSentence[4] ,
+            // goTo: ''
+        }
+    ]
 
     return (
         <>

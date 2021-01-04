@@ -3,24 +3,27 @@ import './Bubble.scss'
 
 interface IChatBubble {
   label: string,
+  delay?: number,
+  goTo?: string,
   // link: 
 }
 
-const ChatBubble = ({ label }: IChatBubble) => {
+const ChatBubble = ({ label, delay }: IChatBubble) => {
   const handleOnClickBubble = () => {
     console.log('testonclick')
   }
 
-  const timeout = (delay: number) => {
-    return new Promise(res => setTimeout(res, delay))
-  }
+  // const timeout = (delay: number) => {
+  //   return new Promise(res => setTimeout(res, delay))
+  // }
 
   const [isRender, setRender] = useState(false)
 
   useEffect(() => {
+    console.log('delay', delay)
     setTimeout(function () {
       setRender(true)
-    }, 1000)
+    }, delay ? delay : 0 )
   }, [])
 
   return (
