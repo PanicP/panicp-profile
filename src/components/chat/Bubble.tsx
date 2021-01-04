@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Bubble.scss'
 
 interface IChatBubble {
@@ -11,11 +11,23 @@ const ChatBubble = ({ label }: IChatBubble) => {
     console.log('testonclick')
   }
 
+  const timeout = (delay: number) => {
+    return new Promise(res => setTimeout(res, delay))
+  }
+
+  const [isRender, setRender] = useState(false)
+
+  useEffect(() => {
+    setTimeout(function () {
+      setRender(true)
+    }, 1000)
+  }, [])
+
   return (
     <div>
-      <div className='bubble-container' onClick={ () => handleOnClickBubble()}>
+      <div className='bubble-container' onClick={() => handleOnClickBubble()}>
         <div className='bubble-label'>
-          {label}
+          { isRender ? label : '...'}
         </div>
       </div>
     </div>
