@@ -3,36 +3,48 @@ import './Bubble.scss'
 
 interface IChatBubble {
   label: string,
-  delay?: number,
+  displayDelay?: number,
+  ellipsisDelay?: number,
   goTo?: string,
   // link: 
 }
 
-const ChatBubble = ({ label, delay }: IChatBubble) => {
+const ChatBubble = ({ label, displayDelay, ellipsisDelay }: IChatBubble) => {
+
   const handleOnClickBubble = () => {
     console.log('testonclick')
   }
 
-  // const timeout = (delay: number) => {
-  //   return new Promise(res => setTimeout(res, delay))
-  // }
-
   const [isRender, setRender] = useState(false)
+  const [isRenderEllipsis, setRenderEllipsis] = useState(false)
+  // const [timer, setTimer] = useState(0)
 
+  let timer: number = 0
+  // check display delay
   useEffect(() => {
-    console.log('delay', delay)
     setTimeout(function () {
-      setRender(true)
-    }, delay ? delay : 0 )
+      setRenderEllipsis(true)
+      setEllipsisTimeout()
+    }, displayDelay ? displayDelay : 0)
   }, [])
+
+  // check ellipsis delay
+  const setEllipsisTimeout = () => {
+    setTimeout(() => {
+      setRender(true)
+    }, ellipsisDelay ? ellipsisDelay : 0)
+  }
+  // console.log()
 
   return (
     <div>
-      <div className='bubble-container' onClick={() => handleOnClickBubble()}>
-        <div className='bubble-label'>
-          { isRender ? label : '...'}
+      { isRenderEllipsis &&
+        <div className='bubble-container' onClick={() => handleOnClickBubble()}>
+          <div className='bubble-label'>
+            {isRender ? label : '...'}
+          </div>
         </div>
-      </div>
+      }
     </div>
   )
 }

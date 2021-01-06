@@ -17,10 +17,11 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
 
   const mappingDelayList = (wordingList: Array<IWordingList>) => {
     return wordingList.map((wordingProps, index) => {
-
+      const ellipsisDelay: number = 3000
       return {
         ...wordingProps,
-        delay: (index + 1) * 1000
+        displayDelay: (index * ellipsisDelay),
+        ellipsisDelay: ellipsisDelay
       }
     })
   }
@@ -47,7 +48,8 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
     {mappedDelayList.map(wording => (
       <ChatBubble
         label={wording.label}
-        delay={wording.delay}
+        displayDelay={wording.displayDelay}
+        ellipsisDelay={wording.ellipsisDelay}
         goTo={wording.goTo}
       />
     ))}
