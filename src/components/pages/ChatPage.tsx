@@ -2,6 +2,7 @@ import React from 'react'
 import Default from 'Components/layout/Default'
 import ChatLayout from 'Components/layout/ChatLayout'
 import LeftBubbleList from 'Components/chat/LeftBubbleList'
+import RightBubbleList from 'Components/chat/RightBubbleList'
 
 export default () => {
     const mySentence = {
@@ -21,35 +22,35 @@ export default () => {
 
     // mines
     const greeting = [
-        { label: mySentence[1] }, 
+        { label: mySentence[1] },
         { label: mySentence[2] }
     ]
     const goodbye = [
-        { label: mySentence[5] }, 
+        { label: mySentence[5] },
     ]
     const askingEtc = [
-        { label: mySentence[3] }, 
+        { label: mySentence[3] },
         { label: mySentence[4] }
     ]
 
     // yours
     const ansGreeting = [
-        { 
+        {
             label: yourSentence[1],
             goTo: 'askingEtc'
-        }, 
-        { 
-            label: yourSentence[2] ,
+        },
+        {
+            label: yourSentence[2],
             goTo: 'goodbye'
         }
     ]
     const ansAskingEtc = [
-        { 
+        {
             label: yourSentence[3],
             // goTo: ''
-        }, 
-        { 
-            label: yourSentence[4] ,
+        },
+        {
+            label: yourSentence[4],
             // goTo: ''
         }
     ]
@@ -59,6 +60,7 @@ export default () => {
             <Default>
                 <ChatLayout>
                     <LeftBubbleList wordingList={greeting} />
+                    <RightBubbleList rightWordingList={ansGreeting} leftWordingList={greeting}/>
                     {/* <ChatBubble label='test chat'></ChatBubble> */}
                 </ChatLayout>
             </Default>

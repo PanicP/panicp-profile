@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import ChatBubble from './Bubble'
-import './LeftBubbleList.scss'
+import './RightBubbleList.scss'
 
-interface ILeftBubbleList {
-  wordingList: Array<IWordingList>
+interface IRightBubbleList {
+  leftWordingList: Array<IWordingList>
+  rightWordingList: Array<IWordingList>
 }
 
 interface IWordingList {
@@ -12,23 +13,22 @@ interface IWordingList {
   goTo?: string
 }
 
-// const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
-const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
+const RightBubbleList = ({ leftWordingList, rightWordingList  }: IRightBubbleList) => {
 
   const mappingDelayList = (wordingList: Array<IWordingList>) => {
     return wordingList.map((wordingProps, index) => {
-      const ellipsisDelay: number = 3000
+      const ellipsisDelay: number = 1000
       return {
         ...wordingProps,
-        displayDelay: (index * ellipsisDelay),
+        displayDelay: (leftWordingList.length * ellipsisDelay),
         ellipsisDelay: ellipsisDelay
       }
     })
   }
 
-  const [mappedDelayList, setMappedDelayList] = useState(mappingDelayList(wordingList))
+  const [mappedDelayList, setMappedDelayList] = useState(mappingDelayList(rightWordingList))
 
-  return <div className="left-bubble-list">
+  return <div className="right-bubble-list">
     {mappedDelayList.map(wording => (
       <ChatBubble
         label={wording.label}
@@ -40,4 +40,4 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
   </div>
 }
 
-export default LeftBubbleList
+export default RightBubbleList

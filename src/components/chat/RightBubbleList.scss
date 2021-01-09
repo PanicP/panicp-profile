@@ -1,9 +1,11 @@
-.left-bubble-list {
+.right-bubble-list {
   margin: 0px 8px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
 
   > div {
     margin-top: 4px;
+    display: flex;
+    justify-content: flex-end;
   }
 }

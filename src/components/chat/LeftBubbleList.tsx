@@ -17,7 +17,7 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
 
   const mappingDelayList = (wordingList: Array<IWordingList>) => {
     return wordingList.map((wordingProps, index) => {
-      const ellipsisDelay: number = 3000
+      const ellipsisDelay: number = 1000
       return {
         ...wordingProps,
         displayDelay: (index * ellipsisDelay),
