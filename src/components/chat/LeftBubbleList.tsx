@@ -9,7 +9,7 @@ interface ILeftBubbleList {
 interface IWordingList {
   label: string
   delay?: number
-  goTo?: string
+  onClick?: Function
 }
 
 // const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
@@ -29,12 +29,12 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
   const [mappedDelayList, setMappedDelayList] = useState(mappingDelayList(wordingList))
 
   return <div className="left-bubble-list">
-    {mappedDelayList.map(wording => (
+    {mappedDelayList && mappedDelayList.map(wording => (
       <ChatBubble
         label={wording.label}
         displayDelay={wording.displayDelay}
         ellipsisDelay={wording.ellipsisDelay}
-        goTo={wording.goTo}
+        onClick={wording.onClick}
       />
     ))}
   </div>

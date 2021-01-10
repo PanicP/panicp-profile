@@ -5,14 +5,15 @@ interface IChatBubble {
   label: string,
   displayDelay?: number,
   ellipsisDelay?: number,
-  goTo?: string,
+  onClick?: Function,
   // link: 
 }
 
-const ChatBubble = ({ label, displayDelay, ellipsisDelay }: IChatBubble) => {
+const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble) => {
 
   const handleOnClickBubble = () => {
     console.log('testonclick')
+    { onClick ? onClick() : () => {} }
   }
 
   const [isRender, setRender] = useState(false)

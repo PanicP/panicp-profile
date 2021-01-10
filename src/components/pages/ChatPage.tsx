@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Default from 'Components/layout/Default'
 import ChatLayout from 'Components/layout/ChatLayout'
 import LeftBubbleList from 'Components/chat/LeftBubbleList'
 import RightBubbleList from 'Components/chat/RightBubbleList'
+
+interface IchangeConversationContext {
+    goTo: string
+}
 
 export default () => {
     const mySentence = {
@@ -35,68 +39,51 @@ export default () => {
         ],
     }
 
+    // yours
+
     const yourSentenceSet = {
-        'greeting': [
-            { label: mySentence[1] },
-            { label: mySentence[2] }
+        'ansGreeting': [
+            {
+                label: yourSentence[1],
+                onClick: () => changeConversationContext({ goTo: 'askingEtc' })
+            },
+            {
+                label: yourSentence[2],
+                onClick: () => changeConversationContext({ goTo: 'goodbye' })
+            }
         ],
-        'goodbye': [
-            { label: mySentence[5] },
-        ],
-        'askingEtc': [
-            { label: mySentence[3] },
-            { label: mySentence[4] }
+        'ansAskingEtc': [
+            {
+                label: yourSentence[3],
+                // goTo: ''
+            },
+            {
+                label: yourSentence[4],
+                // goTo: ''
+            }
         ],
     }
 
-    const greeting = [
-        { label: mySentence[1] },
-        { label: mySentence[2] }
-    ]
-    const goodbye = [
-        { label: mySentence[5] },
-    ]
-    const askingEtc = [
-        { label: mySentence[3] },
-        { label: mySentence[4] }
-    ]
+    const [myDisplayedSentence, setMyDisplayedSentence] = useState([...mySentenceSet['greeting']])
+    const [yourDisplayedSentence, setYourDisplayedSentence] = useState([...yourSentenceSet['ansGreeting']])
 
-    // yours
-    const ansGreeting = [
-        {
-            label: yourSentence[1],
-            goTo: 'askingEtc'
-        },
-        {
-            label: yourSentence[2],
-            goTo: 'goodbye'
-        }
-    ]
-    const ansAskingEtc = [
-        {
-            label: yourSentence[3],
-            // goTo: ''
-        },
-        {
-            label: yourSentence[4],
-            // goTo: ''
-        }
-    ]
+    const changeConversationContext = ({ goTo }: IchangeConversationContext) => {
 
-    const [myDisplayedSentence, setMyDisplayedSentence] = useState(greeting)
-    const [yourDisplayedSentence, setYourDisplayedSentence] = useState(ansGreeting)
+        setMyDisplayedSentence([...mySentenceSet['askingEtc']])
+        setYourDisplayedSentence([...yourSentenceSet['ansAskingEtc']])
+        console.log(myDisplayedSentence, yourDisplayedSentence)
+    }
 
-    // const changeConversationContext = ({ goTo: string }) => {
-    //     setMyDisplayedSentence()
-    //     setYourDisplayedSentence()
-    // }
+    useEffect(() => {
+        // console.log(myDisplayedSentence, yourDisplayedSentence)
+    }, [myDisplayedSentence, yourDisplayedSentence])
 
     return (
         <>
             <Default>
                 <ChatLayout>
-                    <LeftBubbleList wordingList={greeting} />
-                    <RightBubbleList rightWordingList={ansGreeting} leftWordingList={greeting} />
+                    <LeftBubbleList wordingList={myDisplayedSentence} />
+                    <RightBubbleList rightWordingList={yourDisplayedSentence} leftWordingList={myDisplayedSentence} />
                     {/* <ChatBubble label='test chat'></ChatBubble> */}
                 </ChatLayout>
             </Default>
