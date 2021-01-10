@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Default from 'Components/layout/Default'
 import ChatLayout from 'Components/layout/ChatLayout'
 import LeftBubbleList from 'Components/chat/LeftBubbleList'
@@ -21,6 +21,34 @@ export default () => {
     }
 
     // mines
+    const mySentenceSet = {
+        'greeting': [
+            { label: mySentence[1] },
+            { label: mySentence[2] }
+        ],
+        'goodbye': [
+            { label: mySentence[5] },
+        ],
+        'askingEtc': [
+            { label: mySentence[3] },
+            { label: mySentence[4] }
+        ],
+    }
+
+    const yourSentenceSet = {
+        'greeting': [
+            { label: mySentence[1] },
+            { label: mySentence[2] }
+        ],
+        'goodbye': [
+            { label: mySentence[5] },
+        ],
+        'askingEtc': [
+            { label: mySentence[3] },
+            { label: mySentence[4] }
+        ],
+    }
+
     const greeting = [
         { label: mySentence[1] },
         { label: mySentence[2] }
@@ -55,12 +83,20 @@ export default () => {
         }
     ]
 
+    const [myDisplayedSentence, setMyDisplayedSentence] = useState(greeting)
+    const [yourDisplayedSentence, setYourDisplayedSentence] = useState(ansGreeting)
+
+    // const changeConversationContext = ({ goTo: string }) => {
+    //     setMyDisplayedSentence()
+    //     setYourDisplayedSentence()
+    // }
+
     return (
         <>
             <Default>
                 <ChatLayout>
                     <LeftBubbleList wordingList={greeting} />
-                    <RightBubbleList rightWordingList={ansGreeting} leftWordingList={greeting}/>
+                    <RightBubbleList rightWordingList={ansGreeting} leftWordingList={greeting} />
                     {/* <ChatBubble label='test chat'></ChatBubble> */}
                 </ChatLayout>
             </Default>
