@@ -27,6 +27,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       Components: path.resolve(__dirname, "src/components/"),
+      Static: path.resolve(__dirname, "src/static/")
     },
   },
   performance: {

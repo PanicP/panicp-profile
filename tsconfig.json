@@ -10,6 +10,9 @@
       "Components/*": [
         "src/components/*"
       ],
+      "Static/*": [
+        "src/static/*"
+      ],
     },
     /* Default flags */
     "strict": true,
