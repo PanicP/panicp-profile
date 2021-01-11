@@ -28,6 +28,10 @@ const RightBubbleList = ({ leftWordingList, rightWordingList  }: IRightBubbleLis
 
   const [mappedDelayList, setMappedDelayList] = useState(mappingDelayList(rightWordingList))
 
+  useEffect(() => {
+    setMappedDelayList(mappingDelayList(rightWordingList))
+  }, [rightWordingList])
+
   return <div className="right-bubble-list">
     {mappedDelayList && mappedDelayList.map(wording => (
       <ChatBubble

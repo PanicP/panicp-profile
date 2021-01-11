@@ -5,7 +5,8 @@ import LeftBubbleList from 'Components/chat/LeftBubbleList'
 import RightBubbleList from 'Components/chat/RightBubbleList'
 
 interface IchangeConversationContext {
-    goTo: string
+    myGoTo: string,
+    yourGoTo: string,
 }
 
 export default () => {
@@ -21,7 +22,8 @@ export default () => {
         1: 'Yes.',
         2: 'No.',
         3: 'Side projects',
-        4: 'Hobbies'
+        4: 'Hobbies',
+        5: 'OK'
     }
 
     // mines
@@ -40,16 +42,21 @@ export default () => {
     }
 
     // yours
-
     const yourSentenceSet = {
         'ansGreeting': [
             {
                 label: yourSentence[1],
-                onClick: () => changeConversationContext({ goTo: 'askingEtc' })
+                onClick: () => changeConversationContext({ myGoTo: 'askingEtc', yourGoTo: 'ansAskingEtc' })
             },
             {
                 label: yourSentence[2],
-                onClick: () => changeConversationContext({ goTo: 'goodbye' })
+                onClick: () => changeConversationContext({ myGoTo: 'goodbye', yourGoTo: 'ansGoodbye' })
+            }
+        ],
+        'ansGoodbye': [
+            {
+                label: yourSentence[5],
+                onClick: () => window.close()
             }
         ],
         'ansAskingEtc': [
@@ -67,15 +74,16 @@ export default () => {
     const [myDisplayedSentence, setMyDisplayedSentence] = useState([...mySentenceSet['greeting']])
     const [yourDisplayedSentence, setYourDisplayedSentence] = useState([...yourSentenceSet['ansGreeting']])
 
-    const changeConversationContext = ({ goTo }: IchangeConversationContext) => {
+    const changeConversationContext = ({ myGoTo, yourGoTo }: IchangeConversationContext) => {
 
-        setMyDisplayedSentence([...mySentenceSet['askingEtc']])
-        setYourDisplayedSentence([...yourSentenceSet['ansAskingEtc']])
-        console.log(myDisplayedSentence, yourDisplayedSentence)
+        setMyDisplayedSentence([...mySentenceSet[myGoTo]])
+        setYourDisplayedSentence([...yourSentenceSet[yourGoTo]])
+        // console.log(myDisplayedSentence, yourDisplayedSentence)
     }
 
     useEffect(() => {
-        // console.log(myDisplayedSentence, yourDisplayedSentence)
+        console.log('myDisplayedSentence', myDisplayedSentence)
+        console.log('yourDisplayedSentence', yourDisplayedSentence)
     }, [myDisplayedSentence, yourDisplayedSentence])
 
     return (

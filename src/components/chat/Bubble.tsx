@@ -12,7 +12,6 @@ interface IChatBubble {
 const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble) => {
 
   const handleOnClickBubble = () => {
-    console.log('testonclick')
     { onClick ? onClick() : () => {} }
   }
 
@@ -23,11 +22,11 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble
   let timer: number = 0
   // check display delay
   useEffect(() => {
-    setTimeout(function () {
+    setTimeout(() => {
       setRenderEllipsis(true)
       setEllipsisTimeout()
     }, displayDelay ? displayDelay : 0)
-  }, [])
+  }, [displayDelay])
 
   // check ellipsis delay
   const setEllipsisTimeout = () => {

@@ -28,6 +28,10 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
 
   const [mappedDelayList, setMappedDelayList] = useState(mappingDelayList(wordingList))
 
+  useEffect(() => {
+    setMappedDelayList(mappingDelayList(wordingList))
+  }, [wordingList])
+
   return <div className="left-bubble-list">
     {mappedDelayList && mappedDelayList.map(wording => (
       <ChatBubble
