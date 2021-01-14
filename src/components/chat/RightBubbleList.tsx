@@ -33,8 +33,9 @@ const RightBubbleList = ({ leftWordingList, rightWordingList  }: IRightBubbleLis
   }, [rightWordingList])
 
   return <div className="right-bubble-list">
-    {mappedDelayList && mappedDelayList.map(wording => (
+    {mappedDelayList && mappedDelayList.map((wording, index) => (
       <ChatBubble
+        key={`${index}-${wording.label}`} // forced bubble to remount
         label={wording.label}
         displayDelay={wording.displayDelay}
         ellipsisDelay={wording.ellipsisDelay}

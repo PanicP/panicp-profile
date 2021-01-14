@@ -22,6 +22,8 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble
   let timer: number = 0
   // check display delay
   useEffect(() => {
+    // setRenderEllipsis(false)
+    // setRender(false)
     setTimeout(() => {
       setRenderEllipsis(true)
       setEllipsisTimeout()
@@ -35,6 +37,9 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble
     }, ellipsisDelay ? ellipsisDelay : 0)
   }
   // console.log()
+  // useEffect(() => {
+  //   console.log(isRenderEllipsis, isRender)
+  // }, [isRenderEllipsis, isRender])
 
   return (
     <div>
