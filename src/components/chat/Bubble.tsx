@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './Bubble.scss'
 
 interface IChatBubble {
-  label: string,
-  displayDelay?: number,
-  ellipsisDelay?: number,
-  onClick?: Function,
+  label: string
+  displayDelay?: number
+  ellipsisDelay?: number
+  onClick?: Function
+  trigger?: Function
   // link: 
 }
 
-const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble) => {
+const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IChatBubble) => {
 
   const handleOnClickBubble = () => {
     { onClick ? onClick() : () => {} }
@@ -17,9 +18,7 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble
 
   const [isRender, setRender] = useState(false)
   const [isRenderEllipsis, setRenderEllipsis] = useState(false)
-  // const [timer, setTimer] = useState(0)
 
-  let timer: number = 0
   // check display delay
   useEffect(() => {
     // setRenderEllipsis(false)
@@ -29,6 +28,10 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick }: IChatBubble
       setEllipsisTimeout()
     }, displayDelay ? displayDelay : 0)
   }, [displayDelay])
+
+  useEffect(() => {
+    trigger ? trigger() : () => {}
+  }, [trigger])
 
   // check ellipsis delay
   const setEllipsisTimeout = () => {

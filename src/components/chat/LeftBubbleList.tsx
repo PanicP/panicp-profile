@@ -9,7 +9,8 @@ interface ILeftBubbleList {
 interface IWordingList {
   label: string
   delay?: number
-  onClick?: Function
+  // onClick?: Function
+  trigger?: Function
 }
 
 // const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
@@ -39,7 +40,7 @@ const LeftBubbleList = ({ wordingList }: ILeftBubbleList) => {
         label={wording.label}
         displayDelay={wording.displayDelay}
         ellipsisDelay={wording.ellipsisDelay}
-        onClick={wording.onClick}
+        trigger={wording.trigger}
       />
     ))}
   </div>

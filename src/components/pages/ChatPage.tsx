@@ -3,6 +3,7 @@ import Default from 'Components/layout/Default'
 import ChatLayout from 'Components/layout/ChatLayout'
 import LeftBubbleList from 'Components/chat/LeftBubbleList'
 import RightBubbleList from 'Components/chat/RightBubbleList'
+import { history } from '../../history'
 
 interface IchangeConversationContext {
     myGoTo: string,
@@ -15,7 +16,8 @@ export default () => {
         2: 'Do you want to know something about me ?',
         3: 'So, I have some side projects and my hobbies.',
         4: 'Which one do you want to see ?',
-        5: 'See ya.'
+        5: 'See ya.',
+        6: 'Here we go'
     }
 
     const yourSentence = {
@@ -39,6 +41,12 @@ export default () => {
             { label: mySentence[3] },
             { label: mySentence[4] }
         ],
+        'going': [
+            { 
+                label: mySentence[6], 
+                trigger: () => history.push('/chat')
+            }
+        ]
     }
 
     // yours
@@ -56,7 +64,7 @@ export default () => {
         'ansGoodbye': [
             {
                 label: yourSentence[5],
-                onClick: () => window.close()
+                onClick: () => {}
             }
         ],
         'ansAskingEtc': [
@@ -75,11 +83,14 @@ export default () => {
     const [yourDisplayedSentence, setYourDisplayedSentence] = useState([...yourSentenceSet['ansGreeting']])
 
     const changeConversationContext = ({ myGoTo, yourGoTo }: IchangeConversationContext) => {
-
         setMyDisplayedSentence([...mySentenceSet[myGoTo]])
         setYourDisplayedSentence([...yourSentenceSet[yourGoTo]])
         // console.log(myDisplayedSentence, yourDisplayedSentence)
     }
+
+    // const setRouting = ({  }: ) => {
+    //     setMyDisplayedSentence([...mySentenceSet[myGoTo]]) asdasdasd
+    // }
 
     useEffect(() => {
         console.log('myDisplayedSentence', myDisplayedSentence)
