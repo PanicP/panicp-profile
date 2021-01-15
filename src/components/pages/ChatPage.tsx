@@ -44,13 +44,14 @@ export default () => {
         'going': [
             { 
                 label: mySentence[6], 
-                trigger: () => history.push('/chat')
+                trigger: () => history.push('/')
             }
         ]
     }
 
     // yours
     const yourSentenceSet = {
+        'null': [],
         'ansGreeting': [
             {
                 label: yourSentence[1],
@@ -64,7 +65,7 @@ export default () => {
         'ansGoodbye': [
             {
                 label: yourSentence[5],
-                onClick: () => {}
+                onClick: () => changeConversationContext({ myGoTo: 'going', yourGoTo: 'null' })
             }
         ],
         'ansAskingEtc': [
