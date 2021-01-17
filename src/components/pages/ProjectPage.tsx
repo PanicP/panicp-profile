@@ -7,7 +7,7 @@ export default () => (
     <Default>
       <ProjectLayout>
         Project
-                </ProjectLayout>
+      </ProjectLayout>
     </Default>
   </>
 )
