@@ -16,8 +16,8 @@ const ProjectLayout = ({ children }: DefaultLayout) => (
     </div>
     <div className="empty-space">
       <div>
-        <img src={GithubIcon} alt='github' />
-        <img src={LinkedinIcon} alt='linkedin' />
+        <img src={GithubIcon} alt='github' width={ 48 } height={ 48 } />
+        <img src={LinkedinIcon} alt='linkedin' width={ 48 } height={ 48 } />
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 .project-container {
+  margin-top: 96px;
+
   .project-header {
     .project-header-title {
       
@@ -12,28 +14,25 @@
   .project-list {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 48px;
 
     > div {
-      flex: 0 0 calc(33.33% - 5.33px);
+      flex: 0 0 calc(33.33% - 10.66px);
       min-height: 192px;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
     :nth-child(3n + 1) {
-      margin-right: 4px;
-    }
-
-    :nth-child(3n + 1) {
-      margin-right: 4px;
+      margin-right: 8px;
     }
 
     :nth-child(3n + 2) {
-      margin-left: 4px;
-      margin-right: 4px;
+      margin-left: 8px;
+      margin-right: 8px;
     }
 
     :nth-child(3n) {
-      margin-left: 4px;
+      margin-left: 8px;
     }
   }
 }
