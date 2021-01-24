@@ -11,7 +11,7 @@ interface DefaultLayout {
 const ProjectLayout = ({ children }: DefaultLayout) => (
   <div className="project-layout">
     <div className="empty-space" />
-    <div className="project-container">
+    <div className="project">
       {children}
     </div>
     <div className="empty-space">

@@ -1,0 +1,39 @@
+.project-container {
+  .project-header {
+    .project-header-title {
+      
+    }
+
+    .project-header-desc {
+
+    }
+  }
+
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 0 0 calc(33.33% - 5.33px);
+      min-height: 192px;
+      margin-bottom: 8px;
+    }
+
+    :nth-child(3n + 1) {
+      margin-right: 4px;
+    }
+
+    :nth-child(3n + 1) {
+      margin-right: 4px;
+    }
+
+    :nth-child(3n + 2) {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
+    :nth-child(3n) {
+      margin-left: 4px;
+    }
+  }
+}
