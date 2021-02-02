@@ -5,6 +5,16 @@ import ProjectBox from 'Components/project/ProjectBox'
 import './ProjectContainer.scss'
 
 const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 1, 1, 1, 1, 1]
+const test2 = [
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  {title: 'test', label: 'test1'},
+  
+]
 // const test = [1, 2 , 3]
 
 export default () => (
@@ -18,7 +28,7 @@ export default () => (
           </div>
     </div>
     <div className="project-list">
-      {test && test.map(data => <ProjectBox />)}
+      {test2 && test2.map(data => <ProjectBox />)}
     </div>
   </div>
 )

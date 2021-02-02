@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion"
 import './ProjectBox.scss'
 
 interface IProjectBox {
@@ -7,11 +8,16 @@ interface IProjectBox {
   description?: string
 }
 
-const ProjectBox = ({ image, title, description }: IProjectBox ) => {
+const ProjectBox = ({ image, title, description }: IProjectBox) => {
   return <>
     <div className="box-container">
-      <div></div>
+      <motion.div whileHover={{ backgroundColor: "red" }}>
+
+      </motion.div>
     </div>
+    {/* <motion.div className="box-container" whileHover={{ backgroundColor: "red" }}>
+
+    </motion.div> */}
   </>
 }
 
