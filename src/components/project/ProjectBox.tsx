@@ -11,12 +11,13 @@ interface IProjectBox {
 const ProjectBox = ({ image, title, description }: IProjectBox) => {
   return <>
     <div className="box-container">
-      <motion.div className="box-motion" whileHover={{ backgroundColor: 'red', bottom: 0 }}>
+      <motion.div className="box-motion" whileHover={{ bottom: 0 }}>
         <div className="upper-box">
-          OMEGA
+          { title ? title : 'PROJECT NAME' }
         </div>
         <div className="lower-box">
-          lul
+          { description ? description : 'PROJECT DESCRIPTION' }
+          <button>Source</button>
         </div>
       </motion.div>
     </div>
