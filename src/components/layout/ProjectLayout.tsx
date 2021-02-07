@@ -10,14 +10,22 @@ interface DefaultLayout {
 // 
 const ProjectLayout = ({ children }: DefaultLayout) => (
   <div className="project-layout">
-    <div className="empty-space" />
-    <div className="project">
-      {children}
+    <div className="project-body">
+      <div className="empty-space" />
+      <div className="project">
+        {children}
+      </div>
+      <div className="empty-space">
+        <div>
+          <img src={GithubIcon} alt='github' width={48} height={48} />
+          <img src={LinkedinIcon} alt='linkedin' width={48} height={48} />
+        </div>
+      </div>
     </div>
-    <div className="empty-space">
+    
+    <div className="project-footer">
       <div>
-        <img src={GithubIcon} alt='github' width={ 48 } height={ 48 } />
-        <img src={LinkedinIcon} alt='linkedin' width={ 48 } height={ 48 } />
+        Created By PanicP
       </div>
     </div>
   </div>

@@ -1,13 +1,28 @@
 .project-layout {
   display: flex;
+  flex-direction: column;
 
-  > .empty-space {
-    flex: 2;
+  > .project-body {
+    display: flex;
+    flex: 1;
+
+    > .empty-space {
+      flex: 2;
+    }
+
+    > .project {
+      flex: 6;
+      // border: 1px solid lightgrey;
+      min-height: 100vh;
+    }
   }
 
-  > .project {
-    flex: 6;
-    border: 1px solid lightgrey;
-    min-height: 100vh;
+  > .project-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 192px;
+    background-color: black;
+    color: white;
   }
 }
