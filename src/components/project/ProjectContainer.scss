@@ -22,16 +22,16 @@
       margin-bottom: 16px;
     }
 
-    :nth-child(3n + 1) {
+    > :nth-child(3n + 1) {
       margin-right: 8px;
     }
 
-    :nth-child(3n + 2) {
+    > :nth-child(3n + 2) {
       margin-left: 8px;
       margin-right: 8px;
     }
 
-    :nth-child(3n) {
+    > :nth-child(3n) {
       margin-left: 8px;
     }
   }
