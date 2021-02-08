@@ -10,7 +10,15 @@ interface IProjectBox {
   demo?: string
 }
 
-const ProjectBox = ({ image, title, description }: IProjectBox) => {
+interface INavigateToExternalUrl {
+  url: string
+  shouldOpenNewTab: boolean
+}
+
+const navigateToExternalUrl = ({ url, shouldOpenNewTab }: INavigateToExternalUrl) => (shouldOpenNewTab ? window.open(url, '_blank') : (window.location.href = url))
+
+
+const ProjectBox = ({ image, title, description, src, demo }: IProjectBox) => {
   return <>
     <div className="box-container">
       <motion.div className="box-motion" whileHover={{ bottom: 0 }}>
@@ -20,12 +28,14 @@ const ProjectBox = ({ image, title, description }: IProjectBox) => {
         <div className="lower-box">
           {description ? description : 'PROJECT DESCRIPTION'}
           <div className="button-container">
-            <div className="source button">
+            <div className="source button" onClick={() => navigateToExternalUrl({ url: src, shouldOpenNewTab: true })}>
               <div>Source</div>
             </div>
-            <div className="demo button">
-              <div>Demo</div>
-            </div>
+            {demo &&
+              <div className="demo button" onClick={() => navigateToExternalUrl({ url: demo, shouldOpenNewTab: true })}>
+                <div>Demo</div>
+              </div>
+            }
           </div>
         </div>
       </motion.div>

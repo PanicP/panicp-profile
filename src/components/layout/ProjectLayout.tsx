@@ -1,6 +1,7 @@
 import React from 'react'
 import GithubIcon from 'Static/pictures/github.png'
 import LinkedinIcon from 'Static/pictures/linkedin.png'
+import PPIcon from 'Static/pictures/pp.png'
 import './ProjectLayout.scss'
 
 interface DefaultLayout {
@@ -14,11 +15,19 @@ interface INavigateToExternalUrl {
 }
 
 const navigateToExternalUrl = ({ url, shouldOpenNewTab }: INavigateToExternalUrl) => (shouldOpenNewTab ? window.open(url, '_blank') : (window.location.href = url))
-//
+
 const ProjectLayout = ({ children }: DefaultLayout) => (
   <div className="project-layout">
     <div className="project-body">
-      <div className="empty-space" />
+      <div className="empty-space">
+        <img
+          className="icon"
+          src={PPIcon}
+          alt="github"
+          width={144}
+          height={64}
+        />
+      </div>
       <div className="project">{children}</div>
       <div className="empty-space">
         <div className="icons-container">
