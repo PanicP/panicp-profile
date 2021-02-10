@@ -1,7 +1,19 @@
 .project-container {
   margin-top: 96px;
 
+  .back-button {
+    color: black;
+
+    :hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+
   .project-header {
+    margin-top: 1em;
+    color: black;
+
     .project-header-title {
       
     }
