@@ -1,3 +1,28 @@
 .hobby-container {
   margin-top: 96px;
+
+  .back-button {
+    color: black;
+
+    :hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+
+  .hobby-header {
+    margin-top: 1em;
+    color: black;
+
+    .hobby-header-title {
+      
+    }
+  }
+
+  .hobby-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 48px;
+
+  }
 }

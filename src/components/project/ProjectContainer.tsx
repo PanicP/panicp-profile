@@ -2,17 +2,6 @@ import React from 'react'
 import ProjectBox from 'Components/project/ProjectBox'
 import './ProjectContainer.scss'
 
-const test2 = [
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-  { title: 'test', label: 'test1' },
-
-]
-
 const Projects = [
   {
     image: '',
