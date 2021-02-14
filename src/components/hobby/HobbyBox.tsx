@@ -2,19 +2,19 @@ import React from 'react'
 import { motion } from "framer-motion"
 import './HobbyBox.scss'
 
-interface IProjectBox {
+interface IHobbyBox {
   image?: string
   title: string
   description: string
 }
 
-export default ({ image, title, description }: IProjectBox) => (
-  <div className="box-container">
-    <motion.div className="box-motion" whileHover={{ bottom: 0 }}>
-      <div className="upper-box">
+export default ({ image, title, description }: IHobbyBox) => (
+  <div className="hobby-box-container">
+    <motion.div className="hobby-box-motion" whileHover={{ bottom: 0 }} onClick={() => { alert('test') }}>
+      <div className="hobby-upper-box">
         {title ? title : 'PROJECT NAME'}
       </div>
-      <div className="lower-box">
+      <div className="hobby-lower-box">
         {description ? description : 'PROJECT DESCRIPTION'}
       </div>
     </motion.div>

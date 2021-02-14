@@ -1,13 +1,13 @@
-.box-container {
+.hobby-box-container {
   position: relative;
   width: 100%;
-  min-height: 48px;
-  max-height: 48px;
+  min-height: 96px;
+  max-height: 96px;
   background-color: black;
   border-radius: 16px;
   overflow-y: hidden;
 
-  > .box-motion {
+  > .hobby-box-motion {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -19,14 +19,18 @@
     min-height: 200%;
     max-height: 200%;
 
-    > .upper-box {
+    :hover {
+      cursor: pointer;
+    }
+
+    > .hobby-upper-box {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    > .lower-box {
+    > .hobby-lower-box {
       flex: 1;
       display: flex;
       flex-direction: column;
