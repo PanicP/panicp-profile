@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'VictoriaTypewriter';
+  src: local('VictoriaTypewriter'), url(./static/fonts/VictoriaTypewriter.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Brush Script MT", sans-serif;
+  font-family: VictoriaTypewriter;
+  // font-family: "Brush Script MT", sans-serif;
 }
 
 * {

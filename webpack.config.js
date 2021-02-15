@@ -44,7 +44,13 @@ module.exports = {
               }
             }
           }]
-      }
+      },
+      {
+        test: /\.(ttf)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
       // {
       //   test: /\.(jpe?g|gif|png|svg)$/i,
       //   use: [
