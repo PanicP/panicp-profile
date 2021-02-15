@@ -1,7 +1,7 @@
 import React from 'react'
 import GithubIcon from 'Static/pictures/github.png'
 import LinkedinIcon from 'Static/pictures/linkedin.png'
-import PPIcon from 'Static/pictures/pp.png'
+import PPIcon from 'Static/pictures/pplogo.svg'
 import './ProjectLayout.scss'
 
 interface DefaultLayout {
@@ -24,8 +24,8 @@ const ProjectLayout = ({ children }: DefaultLayout) => (
           className="icon"
           src={PPIcon}
           alt="github"
-          width={144}
-          height={64}
+          width={96}
+          height={96}
         />
       </div>
       <div className="project">{children}</div>
