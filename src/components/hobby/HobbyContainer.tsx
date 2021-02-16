@@ -1,15 +1,17 @@
 import React from 'react'
 import HobbyBox from './HobbyBox'
+import { history } from 'History'
 import './HobbyContainer.scss'
+import WorkoutImage from 'Static/pictures/gym.jpg'
 
 const hobbies = [
   {
-    image: '',
+    image: WorkoutImage,
     title: 'Workout',
     description: 'My workout routine, goal, motivation, etc...',
   },
   {
-    image: '',
+    image: null,
     title: 'Osu Mania (Rhythm Game)',
     description: 'Entertainment side of my life.',
   }
@@ -18,7 +20,7 @@ const hobbies = [
 export default () => (
   <div className="hobby-container">
     <div className="back-button">
-      <div>
+      <div onClick={() => history.push('/')}>
         &lt; Back to chat
       </div>
     </div>
@@ -31,7 +33,7 @@ export default () => (
       {hobbies.map((data, index) => (
         <HobbyBox
           key={`hobby-box-${index}`}
-          image={data.image ? data.image : ''}
+          image={data.image ? data.image : null}
           title={data.title}
           description={data.description}
         />

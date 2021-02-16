@@ -13,6 +13,9 @@
       "Static/*": [
         "src/static/*"
       ],
+      "History": [
+        "src/history.tsx"
+      ]
     },
     /* Default flags */
     "strict": true,
