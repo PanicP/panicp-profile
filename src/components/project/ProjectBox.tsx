@@ -21,7 +21,10 @@ const navigateToExternalUrl = ({ url, shouldOpenNewTab }: INavigateToExternalUrl
 const ProjectBox = ({ image, title, description, src, demo }: IProjectBox) => {
   return <>
     <div className="box-container">
-      <motion.div className="box-motion" whileHover={{ bottom: 0 }}>
+      <motion.div
+        className="box-motion"
+        whileHover={{ bottom: 0 }}
+        transition={{ type: 'tween' }}>
         <div className="upper-box">
           {title ? title : 'PROJECT NAME'}
         </div>
