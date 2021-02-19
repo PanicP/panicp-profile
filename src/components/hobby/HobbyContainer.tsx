@@ -3,6 +3,7 @@ import HobbyBox from './HobbyBox'
 import { history } from 'History'
 import './HobbyContainer.scss'
 import WorkoutImage from 'Static/pictures/gym.jpg'
+import ManiaImage from 'Static/pictures/mania.jpg'
 
 const hobbies = [
   {
@@ -11,7 +12,7 @@ const hobbies = [
     description: 'My workout routine, goal, motivation, etc...',
   },
   {
-    image: null,
+    image: ManiaImage,
     title: 'Osu Mania (Rhythm Game)',
     description: 'Entertainment side of my life.',
   }
