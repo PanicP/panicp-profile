@@ -71,11 +71,11 @@ export default () => {
         'ansAskingEtc': [
             {
                 label: yourSentence[3],
-                // goTo: ''
+                onClick: () => changeConversationContext({ myGoTo: 'going', yourGoTo: 'null' })
             },
             {
                 label: yourSentence[4],
-                // goTo: ''
+                onClick: () => changeConversationContext({ myGoTo: 'going', yourGoTo: 'null' })
             }
         ],
     }

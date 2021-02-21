@@ -30,7 +30,9 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IC
   }, [displayDelay])
 
   useEffect(() => {
-    trigger ? trigger() : () => {}
+    trigger ? setTimeout(() => {
+      trigger()
+    }, 6000) : () => {}
   }, [trigger])
 
   // check ellipsis delay
