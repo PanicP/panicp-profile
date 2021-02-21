@@ -3,6 +3,20 @@
 
   > .empty-space {
     flex: 3;
+
+    > .icons-container {
+      display: flex;
+      justify-content: flex-end;
+
+      :hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+      
+      > .icon {
+        margin: 8px;
+      }
+    }
   }
 
   > .chat-container {
