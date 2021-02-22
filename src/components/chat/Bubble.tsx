@@ -13,12 +13,30 @@ interface IChatBubble {
 
 const bubbleVariants = {
   hidden: {
-    width: 0
+    width: 0,
+    height: 0,
   },
   visible: {
     width: 'fit-content',
+    height: 'auto',
     transition: {
-      duration: 0.5,
+      duration: 0.1,
+      type: 'tween',
+      // stiffness: 1000
+    }
+  }
+}
+
+const labelVariants = {
+  hidden: {
+    // width: 0,
+  },
+  visible: {
+    // width: 'auto',
+    transition: {
+      duration: 1,
+      type: 'tween',
+      // stiffness: 1000
     }
   }
 }
@@ -69,9 +87,14 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IC
           initial='hidden'
           animate='visible'
         >
-          <div className='bubble-label'>
+          <motion.div 
+            className='bubble-label'
+            variants={ labelVariants }
+            initial='hidden'
+            animate='visible'
+          >
             {isRender ? label : '...'}
-          </div>
+          </motion.div>
         </motion.div>
       }
     </div>
