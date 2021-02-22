@@ -20,8 +20,12 @@
   }
 
   > .chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     flex: 4;
     border: 1px solid lightgrey;
     min-height: 100vh;
+    padding: 1em 0;
   }
 }

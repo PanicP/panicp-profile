@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import './Bubble.scss'
 
 interface IChatBubble {
@@ -10,10 +11,22 @@ interface IChatBubble {
   // link: 
 }
 
+const bubbleVariants = {
+  hidden: {
+    width: 0
+  },
+  visible: {
+    width: 'fit-content',
+    transition: {
+      duration: 0.5,
+    }
+  }
+}
+
 const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IChatBubble) => {
 
   const handleOnClickBubble = () => {
-    { onClick ? onClick() : () => {} }
+    { onClick ? onClick() : () => { } }
   }
 
   const [isRender, setRender] = useState(false)
@@ -32,7 +45,7 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IC
   useEffect(() => {
     trigger ? setTimeout(() => {
       trigger()
-    }, 6000) : () => {}
+    }, 6000) : () => { }
   }, [trigger])
 
   // check ellipsis delay
@@ -49,11 +62,17 @@ const ChatBubble = ({ label, displayDelay, ellipsisDelay, onClick, trigger }: IC
   return (
     <div>
       { isRenderEllipsis &&
-        <div className='bubble-container' onClick={() => handleOnClickBubble()}>
+        <motion.div
+          className='bubble-container'
+          onClick={() => handleOnClickBubble()}
+          variants={ bubbleVariants }
+          initial='hidden'
+          animate='visible'
+        >
           <div className='bubble-label'>
             {isRender ? label : '...'}
           </div>
-        </div>
+        </motion.div>
       }
     </div>
   )
