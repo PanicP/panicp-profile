@@ -41,12 +41,18 @@ export default () => {
             { label: mySentence[3] },
             { label: mySentence[4] }
         ],
-        'going': [
+        'pushToProject': [
             { 
                 label: mySentence[6], 
-                trigger: () => history.push('/')
+                trigger: () => history.push('/project')
             }
-        ]
+        ],
+        'pushToHobby': [
+            { 
+                label: mySentence[6], 
+                trigger: () => history.push('/hobby')
+            }
+        ],
     }
 
     // yours
