@@ -1,8 +1,10 @@
+@import "Static/colors.scss";
+
 .project-container {
   margin-top: 96px;
 
   .back-button {
-    color: black;
+    color: $color4;
 
     :hover {
       cursor: pointer;
@@ -12,7 +14,7 @@
 
   .project-header {
     margin-top: 1em;
-    color: black;
+    color: $color4;
 
     .project-header-title {
       

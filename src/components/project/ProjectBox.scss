@@ -1,9 +1,11 @@
+@import "Static/colors.scss";
+
 .box-container {
   position: relative;
   width: 100%;
   min-height: 48px;
   max-height: 48px;
-  background-color: black;
+  background-color: $color4;
   border-radius: 16px;
   overflow-y: hidden;
 
@@ -11,7 +13,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: $color4;
     color: white;
     // background-image: none;
     // background-image: linear-gradient(180deg, black, black);
@@ -42,7 +44,7 @@
 
         > .button {
           background-color: white;
-          color: black;
+          color: $color4;
           height: 24px;
           width: 96px;
           border-radius: 12px;
