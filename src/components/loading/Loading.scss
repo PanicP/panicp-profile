@@ -1,3 +1,5 @@
+@import "Static/colors.scss";
+
 @-webkit-keyframes line-scale-pulse-out {
     0% {
         -webkit-transform: scaley(1);
@@ -33,7 +35,7 @@
 }
 
 .line-scale-pulse-out > div {
-    background-color: #ed6363;
+    background-color: $color1;
     width: 40px;
     height: 350px;
     border-radius: 20px;
@@ -58,7 +60,7 @@
 }
 
 .loading-container {
-    background-color: #003545;
+    background-color: $color4;
     height: 100vh;
     display: flex;
     justify-content: center;

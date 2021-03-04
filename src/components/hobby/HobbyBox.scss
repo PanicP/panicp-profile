@@ -1,9 +1,11 @@
+@import "Static/colors.scss";
+
 .hobby-box-container {
   position: relative;
   width: 100%;
   min-height: 96px;
   max-height: 96px;
-  background-color: black;
+  // background-color: $color4;
   border-radius: 16px;
   overflow-y: hidden;
 
@@ -32,6 +34,7 @@
 
       > .hobby-background-image {
         filter: brightness(50%);
+        // background-color: $color4;
 
         > img {
           position: absolute;

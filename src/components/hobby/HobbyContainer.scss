@@ -1,8 +1,10 @@
+@import "Static/colors.scss";
+
 .hobby-container {
   margin-top: 96px;
 
   .back-button {
-    color: black;
+    color: $color4;
 
     :hover {
       cursor: pointer;
@@ -12,7 +14,7 @@
 
   .hobby-header {
     margin-top: 1em;
-    color: black;
+    color: $color4;
 
     .hobby-header-title {
       
