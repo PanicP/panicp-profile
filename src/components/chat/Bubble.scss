@@ -1,8 +1,4 @@
-$color1: #B8D8BA;
-$color2: #D9DBBC;
-$color3: #FCDDBC;
-$color4: #EF959D;
-$color5: #69585F;
+@import "Static/colors.scss";
 
 .bubble-container {
   background-color: $color4;
@@ -11,7 +7,7 @@ $color5: #69585F;
   width: fit-content;
 
   > .bubble-label {
-    color: $color3;
+    color: $color1;
     // height: 1em;
     word-break: break-word;
   }

@@ -77,11 +77,11 @@ export default () => {
         'ansAskingEtc': [
             {
                 label: yourSentence[3],
-                onClick: () => changeConversationContext({ myGoTo: 'going', yourGoTo: 'null' })
+                onClick: () => changeConversationContext({ myGoTo: 'pushToProject', yourGoTo: 'null' })
             },
             {
                 label: yourSentence[4],
-                onClick: () => changeConversationContext({ myGoTo: 'going', yourGoTo: 'null' })
+                onClick: () => changeConversationContext({ myGoTo: 'pushToHobby', yourGoTo: 'null' })
             }
         ],
     }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectBox from 'Components/project/ProjectBox'
 import './ProjectContainer.scss'
+import { history } from 'History'
 
 const Projects = [
   {
@@ -28,7 +29,7 @@ const Projects = [
 
 export default () => (
   <div className="project-container">
-    <div className="back-button">
+    <div className="back-button" onClick={ () => { history.push('/chat') }}>
       <div>
         &lt; Back to chat
       </div>
