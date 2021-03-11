@@ -1,0 +1,29 @@
+.detail-layout {
+  display: flex;
+  flex-direction: column;
+
+  > .detail-body {
+    display: flex;
+    flex: 1;
+
+    > .empty-space {
+      flex: 2;
+
+    }
+
+    > .detail {
+      flex: 6;
+      // border: 1px solid lightgrey;
+      min-height: 100vh;
+    }
+  }
+
+  > .detail-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 192px;
+    background-color: black;
+    color: white;
+  }
+}
